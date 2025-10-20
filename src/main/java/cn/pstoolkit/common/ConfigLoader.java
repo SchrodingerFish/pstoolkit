@@ -1,0 +1,58 @@
+package cn.pstoolkit.common;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+public final class ConfigLoader {
+    private static final Properties PROPS = new Properties();
+
+    static {
+        try (InputStream in = Thread.currentThread().getContextClassLoader()
+                .getResourceAsStream("application.properties")) {
+            if (in != null) {
+                PROPS.load(in);
+            }
+        } catch (IOException ignored) {
+        }
+    }
+
+    private ConfigLoader() {
+    }
+
+    public static String getString(String key, String defaultValue) {
+        String fromSys = System.getProperty(key);
+        if (fromSys != null) return fromSys;
+        String envKey = key.toUpperCase().replace('.', '_');
+        String fromEnv = System.getenv(envKey);
+        if (fromEnv != null) return fromEnv;
+        String fromProps = PROPS.getProperty(key);
+        return fromProps != null ? fromProps : defaultValue;
+    }
+
+    public static int getInt(String key, int defaultValue) {
+        String v = getString(key, null);
+        if (v == null) return defaultValue;
+        try {
+            return Integer.parseInt(v.trim());
+        } catch (NumberFormatException e) {
+            return defaultValue;
+        }
+    }
+
+    public static long getLong(String key, long defaultValue) {
+        String v = getString(key, null);
+        if (v == null) return defaultValue;
+        try {
+            return Long.parseLong(v.trim());
+        } catch (NumberFormatException e) {
+            return defaultValue;
+        }
+    }
+
+    public static boolean getBoolean(String key, boolean defaultValue) {
+        String v = getString(key, null);
+        if (v == null) return defaultValue;
+        return "true".equalsIgnoreCase(v) || "1".equals(v);
+    }
+}

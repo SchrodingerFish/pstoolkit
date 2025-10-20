@@ -1,4 +1,4 @@
-package com.cn.redis;
+package cn.pstoolkit.redis;
 
 import redis.clients.jedis.Jedis;
 
