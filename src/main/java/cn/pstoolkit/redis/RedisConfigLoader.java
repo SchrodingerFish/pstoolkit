@@ -1,4 +1,4 @@
-package com.cn.redis;
+package cn.pstoolkit.redis;
 
 import java.io.IOException;
 import java.io.InputStream;
