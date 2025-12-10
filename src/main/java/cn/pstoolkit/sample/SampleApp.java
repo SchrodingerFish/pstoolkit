@@ -41,14 +41,14 @@ public class SampleApp {
         System.out.println("JSON: " + json);
 
         String runRedis = System.getenv("RUN_REDIS_SAMPLE");
-        if ("1".equals(runRedis)) {
+//        if ("1".equals(runRedis)) {
             RedisUtils.set("pstoolkit:hello", "world");
             String v = RedisUtils.get("pstoolkit:hello");
             System.out.println("Redis value: " + v);
-        }
+//        }
 
         String runRabbit = System.getenv("RUN_RABBITMQ_SAMPLE");
-        if ("1".equals(runRabbit)) {
+//        if ("1".equals(runRabbit)) {
             Channel ch = null;
             try {
                 ch = RabbitMQUtils.createChannel();
@@ -64,7 +64,7 @@ public class SampleApp {
             } finally {
                 RabbitMQUtils.closeQuietly(ch);
             }
-        }
+//        }
 
         ExcelWriter.writeXlsxToFile(Paths.get("target/sample.xlsx"), "Demo", rows, header);
         System.out.println("Excel written to target/sample.xlsx");

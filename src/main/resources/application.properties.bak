@@ -4,10 +4,10 @@
 # which take precedence over values in this file.
 
 # Core connection
-redis.host=127.0.0.1
+redis.host=172.16.130.127
 redis.port=6379
 # Leave blank if your Redis has no password
-redis.password=
+redis.password=Qcj8813818@#
 redis.database=0
 # Socket timeout in milliseconds
 redis.timeout=2000
@@ -32,10 +32,10 @@ redis.pool.timeBetweenEvictionRunsMillis=30000
 redis.pool.numTestsPerEvictionRun=-1
 
 # RabbitMQ configuration
-rabbitmq.host=127.0.0.1
+rabbitmq.host=172.16.130.127
 rabbitmq.port=5672
-rabbitmq.username=guest
-rabbitmq.password=guest
+rabbitmq.username=admin
+rabbitmq.password=Qcj8813818@#
 rabbitmq.vhost=/
 rabbitmq.connectionTimeout=30000
 rabbitmq.handshakeTimeout=10000

@@ -1,0 +1,31 @@
+redis:
+  host: 172.16.130.127
+  port: 6379
+  password: xxx
+  database: 0
+  timeout: 2000
+  ssl: false
+  clientName:
+  pool:
+    maxTotal: 64
+    maxIdle: 16
+    minIdle: 4
+    maxWaitMillis: 3000
+    testOnBorrow: true
+    testOnReturn: false
+    testWhileIdle: true
+    blockWhenExhausted: true
+    minEvictableIdleTimeMillis: 60000
+    timeBetweenEvictionRunsMillis: 30000
+    numTestsPerEvictionRun: -1
+rabbitmq:
+  host: 172.16.130.127
+  port: 5672
+  username: admin
+  password: xxx
+  vhost: /
+  connectionTimeout: 30000
+  handshakeTimeout: 10000
+  requestedHeartbeat: 30
+  automaticRecovery: true
+  networkRecoveryInterval: 5000
