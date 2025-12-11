@@ -13,4 +13,9 @@ public class TestLog4j {
         log.error("test error");
     }
 
+    @Test
+    public void testConfig(){
+
+    }
+
 }
