@@ -1,27 +1,7 @@
-#服务器配置
-server:
-    port: 8989
-    servlet:
-        context-path: /
 spring:
+  #激活配置文件
+  profiles:
+    active: dev
   #项目配置
   application:
     name: pstoolkit
-  #Redis配置
-  redis:
-    # 基本连接配置
-    host: 172.16.130.127
-    port: 6379
-    password: xxx
-    database: 0
-    timeout: 2000ms
-    # Lettuce连接池配置
-    lettuce:
-      pool:
-        max-active: 20
-        max-wait: -1ms
-        max-idle: 10
-        min-idle: 0
-      # 关闭超时时间
-      shutdown-timeout: 100ms
-
