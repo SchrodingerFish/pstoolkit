@@ -12,7 +12,7 @@ target/
 *.iws
 *.iml
 *.ipr
-/src/main/resources/*-dev.yaml
+/src/main/resources/application-dev.yaml
 
 ### Eclipse ###
 .apt_generated
