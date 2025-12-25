@@ -8,9 +8,11 @@ public class TestLog4j {
 
     @Test
     public void test(){
-        log.info("test info");
-        log.warn("test warn");
-        log.error("test error");
+        log.trace("=== TRACE message ===");
+        log.debug("=== DEBUG message ===");
+        log.info("=== INFO message ===");
+        log.warn("=== WARN message ===");
+        log.error("=== ERROR message ===");
     }
 
     @Test
