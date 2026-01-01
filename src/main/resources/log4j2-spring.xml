@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN" monitorInterval="30">
+<Configuration status="DEBUG" monitorInterval="30">
     <Properties>
         <!-- 定义日志文件路径 -->
         <Property name="LOG_HOME">./logs</Property>
